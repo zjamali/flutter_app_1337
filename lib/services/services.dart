@@ -35,23 +35,50 @@ class Services {
     */
   }
   static var token;
+  static List<UsersList> users = [];
 
-  static Future<List<UsersList>> getUsers(var token) async{
-    try{
-      final responses = await http.get('https://api.intra.42.fr/v2/cursus/21/cursus_users?filtre[created_at]=2020-11-11T09:57:18.084Z&filter[campus_id]=16&page[size]=100&range[begin_at]=2019-10-16T00:00:00.000Z,2019-10-17T00:00:00.000Z', headers: {
-        HttpHeaders.authorizationHeader: 'Bearer $token',
-      });
-      print(responses.body);
-      if (responses.statusCode == 200){
-        List<UsersList> users =  usersListFromJson(responses.body);
-        return users;
+
+  static List<UsersList> checkRepeting(List<UsersList> users,List<UsersList> newUsers){
+    int i = 0;
+    while(i < newUsers.length) {
+      if (users[0].id == newUsers[i].id){
+        List<UsersList> subList = newUsers.sublist(0,i);
+        return subList;
       }
-      else {
+      i++;
+    }
+    return newUsers;
+  }
+  static Future<List<UsersList>> getUsers(var token,int pageNumber) async{
+    //for (int i = 0; i < 10; i++) {
+      try {
+        final responses = await http.get(
+            'https://api.intra.42.fr/v2/cursus/21/cursus_users?filtre[created_at]=2020-11-11T09:57:18.084Z&filter[campus_id]=16&range[begin_at]=2019-10-16T00:00:00.000Z,2019-10-17T00:00:00.000Z&page=$pageNumber&per_page=100',
+            headers: {
+              HttpHeaders.authorizationHeader: 'Bearer $token',
+            });
+        print(responses.body);
+        if (responses.statusCode == 200) {
+          final newUsers = usersListFromJson(responses.body);
+          print('new === ${newUsers.length}');
+          /*for (int j = 0 ; j < newUsers.length; j++) {
+            if (users[0].user.id == newUsers[j].user.id){
+              List<UsersList> subList = newUsers.sublist(0,i);
+              return users + subList;
+            }
+          }*/
+          users = users + newUsers;
+          print(users.length);
+          return users;
+        }
+        else {
+          return List<UsersList>();
+        }
+      }
+      catch (e) {
         return List<UsersList>();
       }
     }
-    catch (e){
-      return List<UsersList>();
-    }
-  }
+   // return users;
+ // }
 }
