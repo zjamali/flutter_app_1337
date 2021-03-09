@@ -22,7 +22,7 @@ class Services {
       'redirect_uri': 'app://open.my.app',
       'grant_type': 'authorization_code',
       'client_secret':
-          '1174c21103fb3aaa99fc3c5fdcc2f07027af7df3a8d86f83e1d503b6716a9d61',
+          'client secret here',
       'code': code,
     });
     final String accessToken = jsonDecode(response.body)['access_token'] as String;
