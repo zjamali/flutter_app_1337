@@ -1,16 +1,18 @@
-# flutter_app
+# 1337 !official
 
-A new Flutter application.
+An application using flutter.
 
-## Getting Started
+## Description
 
-This project is a starting point for a Flutter application.
+1337 !official is app get you some information about you and your peers using oauth2 authentication 42 API:<br>
+-> average level and commun level .<br>
+-> blackhole time .<br>
+-> logtime.<br>
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## screenshots
+<p align="middle">
+<img src="https://raw.githubusercontent.com/zjamali/flutter_app_1337/master/screenshots/Screenshot_20210501-022711.png" width="250"/>
+<img src="https://raw.githubusercontent.com/zjamali/flutter_app_1337/master/screenshots/Screenshot_20210501-022647.png" width="250"/>
+<img src="https://raw.githubusercontent.com/zjamali/flutter_app_1337/master/screenshots/Screenshot_20210501-023358.png" width="250"/>
+  
+</p>
