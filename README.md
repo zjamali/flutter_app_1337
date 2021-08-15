@@ -13,6 +13,5 @@ An application using flutter.
 <p align="middle">
 <img src="https://raw.githubusercontent.com/zjamali/flutter_app_1337/master/screenshots/Screenshot_20210501-022711.png" width="250"/>
 <img src="https://raw.githubusercontent.com/zjamali/flutter_app_1337/master/screenshots/Screenshot_20210501-022647.png" width="250"/>
-<img src="https://raw.githubusercontent.com/zjamali/flutter_app_1337/master/screenshots/Screenshot_20210501-023358.png" width="250"/>
   
 </p>
